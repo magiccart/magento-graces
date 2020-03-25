@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <cms_index_index translate="label">
+        <reference name="head">
+            <action method="addJs"><script>magiccart/plugin/jquery.parallax-1.1.3.js</script></action>
+        </reference>
+    </cms_index_index>
+<!--
+Additional block dependant on product type
+-->
+    <PRODUCT_TYPE_simple>
+        <reference name="product.info">
+            <block type="catalog/product_view_type_simple" name="product.info.availability.snippet" as="product_type_availability_snippet" template="catalog/product/view/type/availability/snippet/default.phtml" />
+        </reference>
+    </PRODUCT_TYPE_simple>
+    <PRODUCT_TYPE_configurable>
+        <reference name="product.info">
+            <block type="catalog/product_view_type_configurable" name="product.info.availability.snippet" as="product_type_availability_snippet" template="catalog/product/view/type/availability/snippet/default.phtml" />
+        </reference>
+    </PRODUCT_TYPE_configurable>
+    <PRODUCT_TYPE_grouped>
+        <reference name="product.info">
+            <block type="catalog/product_view_type_grouped" name="product.info.availability.snippet" as="product_type_availability_snippet" template="catalog/product/view/type/availability/snippet/grouped.phtml" />
+        </reference>
+    </PRODUCT_TYPE_grouped>
+    <PRODUCT_TYPE_virtual>
+        <reference name="product.info">
+            <block type="catalog/product_view_type_virtual" name="product.info.availability.snippet" as="product_type_availability_snippet" template="catalog/product/view/type/availability/snippet/default.phtml" />
+        </reference>
+    </PRODUCT_TYPE_virtual>
+</layout>
